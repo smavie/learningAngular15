@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ViewEncapsulation, ChangeDetectionStrategy,
-OnInit 
+OnInit, OnChanges, SimpleChanges 
 } from '@angular/core';
 
 @Component({
@@ -9,7 +9,7 @@ OnInit
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ProductDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit, OnChanges {
   @Input() name = "";
   @Output() bought = new EventEmitter<string>();
 
@@ -26,6 +26,15 @@ export class ProductDetailComponent implements OnInit {
   }
   ngOnInit(): void {
       console.log(`Name is ${this.name} in the ngOnInit`);
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+      const product = changes['name'];
+      if(!product.isFirstChange()){
+        const oldValue = product.previousValue;
+        const newValue = product.currentValue;
+        console.log(`Product changed from ${oldValue} to ${newValue}`);
+      }
+
   }
 
 }
