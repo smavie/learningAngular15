@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ViewEncapsulation, ChangeDetectionStrategy,
-OnInit, OnChanges, SimpleChanges 
+OnInit, OnChanges, SimpleChanges, AfterViewInit 
 } from '@angular/core';
 
 @Component({
@@ -24,6 +24,7 @@ export class ProductDetailComponent implements OnInit, OnChanges {
   constructor(){
     console.log(`Name is ${this.name} in constructor`);
   }
+
   ngOnInit(): void {
       console.log(`Name is ${this.name} in the ngOnInit`);
   }
