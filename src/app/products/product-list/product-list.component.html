@@ -1,8 +1,8 @@
 <h2>Product List</h2>
 <ul>
-    <li (click)="selectedProduct = 'Webcam'">Webcam</li>
-    <li (click)="selectedProduct = 'Microphone'">Microphone</li>
-    <li (click)="selectedProduct = 'Keyboard'">Keyboard</li>
+    <li *ngFor="let product of products" (click)="selectedProduct = product">
+        {{product}}
+    </li>
 </ul>
 <app-product-detail
 *ngIf="selectedProduct; else noProduct"

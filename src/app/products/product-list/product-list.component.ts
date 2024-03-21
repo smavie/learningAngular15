@@ -8,6 +8,7 @@ import { ProductDetailComponent } from '../product-detail/product-detail.compone
 })
 export class ProductListComponent implements AfterViewInit {
   selectedProduct = "";
+  products = ['Webcam', 'Microphone', 'Wireless keyboard'];
   onBuy(name: string){
     window.alert(`You just bought ${name}!`);
   }
