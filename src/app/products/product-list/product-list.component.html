@@ -5,8 +5,9 @@
     <li (click)="selectedProduct = 'Keyboard'">Keyboard</li>
 </ul>
 <app-product-detail
-#product 
+*ngIf="selectedProduct" 
 [name] = "selectedProduct" (bought)="onBuy($event)">
 </app-product-detail>
-<span>{{product.name}}</span>
+<p *ngIf="!selectedProduct">No product selected!</p>
+
 
