@@ -20,5 +20,8 @@ export class ProductListComponent implements AfterViewInit {
       console.log(this.productDetail.name);
     }
   }
+  trackByProducts(index: number, name: string): string{
+    return name;
+  }
 
 }
