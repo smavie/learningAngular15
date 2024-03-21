@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { SortPipe } from './sort.pipe';
+import { ProductHostDirective } from './product-host.directive';
 
 
 
@@ -10,7 +11,8 @@ import { SortPipe } from './sort.pipe';
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
-    SortPipe
+    SortPipe,
+    ProductHostDirective
   ],
   imports: [
     CommonModule
